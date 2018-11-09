@@ -25,7 +25,7 @@ SECRET_KEY = 'g0svkh8k&734!hia=(dtqspoboqbe(2lyh=(dc5zo%%tsf!-g+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['35.175.206.162']
+ALLOWED_HOSTS = [os.environ['db_host']]
 
 
 # Application definition
@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'golangdb',
         'USER': 'root',
         'PASSWORD': 'root',
-        'HOST': '127.0.0.1',
+        'HOST': os.environ['db_host'],
         'PORT': '3306',
     }
 }
