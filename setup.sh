@@ -4,8 +4,12 @@
 pubIP=$(echo PUBIP)
 sudo apt-get -y install docker
 sudo apt -y install docker.io
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
+#sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
+#sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
+export MYSQL_PWD root
+echo "mysql-server mysql-server/root_password password $MYSQL_PWD" | debconf-set-selections
+echo "mysql-server mysql-server/root_password_again password $MYSQL_PWD" | debconf-set-selections
+sudo apt-get -y install mysql-server
 sudo apt-get -y install mysql-server
 sudo apt-get install -y python-pip 
 sudo pip install pymysql
