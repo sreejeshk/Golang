@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a comment!
 
-pubIP=$(echo PUBIP)
+pubIP=$(echo $PUBIP)
 sudo apt-get -y install docker
 sudo apt-get -y install docker.io
 #sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
