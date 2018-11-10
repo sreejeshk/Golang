@@ -27,4 +27,4 @@ sudo service mysql restart
 cd /home/ubuntu/athul/Golang
 sudo docker build -t golang-demo:1.0 .
 #sudo docker run -p 8080:8000 --env db_host=$pubIP golang-demo:1.0
-sudo docker run -p 8080:8000 -e PUBIP golang-demo:1.0
+#sudo docker run -p 8080:8000 -e PUBIP golang-demo:1.0
