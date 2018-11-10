@@ -22,7 +22,7 @@ GRANT ALL PRIVILEGES ON golangdb.* TO 'root'@$pubIP;
 FLUSH PRIVILEGES;
 eof
 
-sudo sed -i '/#bind-address*/c\bind-address= 0.0.0.0' /etc/mysql/mysql.conf.d/mysqld.cnf
+sudo sed -i '/bind-address*/c\bind-address= 0.0.0.0' /etc/mysql/mysql.conf.d/mysqld.cnf
 sudo service mysql restart
 cd /home/ubuntu/athul/Golang
 sudo docker build -t golang-demo:1.0 .
